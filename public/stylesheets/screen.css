@@ -1,0 +1,2845 @@
+/* @group Reset */
+html
+{
+	/*This odd 100.01% value for the font size compensates for several browser bugs.
+First, setting a default body font size in percent (instead of em) eliminates an IE/Win problem with growing or shrinking fonts out of proportion if they are later set in ems in other elements.
+Additionally, some versions of Opera will draw a default font-size of 100% too small compared to other browsers.
+Safari, on the other hand, has a problem with a font-size of 101%.
+The current best suggestion is to use the 100.01% value for this property.*/
+	font-size: 100.01%;
+}
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+}
+
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, q, cite, a, abbr, acronym, address,
+big, small, code, samp, var, tt, pre, del, ins, strike, dfn, kbd, em, strong, font, img, s, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,caption, tbody, tfoot, thead, tr, th, td
+{	font-size: 100%;	vertical-align: baseline;}
+
+:link,:visited { text-decoration: none; }
+
+div, dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,pre,p,blockquote
+{
+	margin: 0;
+	padding: 0;
+}
+
+dl,ul,ol
+{
+	list-style: none;
+	list-style-type: none;
+}
+
+/* NOTA: tables still need 'cellspacing="0"' in the markup */
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a,
+a:hover,
+a:active,
+a img,
+:link img,
+:visited img
+{
+	border: none;
+	outline: none;
+	outline-style: none;
+}
+
+:focus {outline: 0;}
+
+address,caption,cite,code,dfn,th,var
+{ 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+pre, code, tt, samp {font-size: 12px;}
+kbd {text-transform: uppercase;}
+sup {vertical-align: super;}
+sub {vertical-align: sub;}
+pre {white-space: pre;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after
+{content:"";}
+
+blockquote,q{quotes: "" "";}
+/* @end */
+
+
+
+/* @group Webfonts */
+@font-face {
+	font-family: "Museo 300";
+	src: url(/webfonts/Museo300-Regular.otf) format("opentype");
+	}
+@font-face {
+	font-family: "Museo 500";
+	src: url(/webfonts/Museo500-Regular.otf) format("opentype");
+	}
+@font-face {
+	font-family: "Museo 700";
+	src: url(/webfonts/Museo700-Regular.otf) format("opentype");
+	}
+/* @end */
+
+/* @group HTML elements */
+body
+{
+  background: #fff;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 12px;/* Corresponde a 11px */
+  line-height: 1.5;
+}
+
+/* Hacemos que todos los elementos en bloque por defecto tengan un margin inferior correspondiente a 10px */
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,pre,p,blockquote{margin: 0 0 10px 0;}
+
+/* @group headings */
+h1, h2, h3, h4, h5, h6
+{
+  font-family: "Museo 300", Museo, Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  line-height: 1.25;
+  margin: 0 0 .5em 0;
+}
+
+h1 {font-size: 30px;}/* 30px */
+h2 {font-size: 24px;}/* 24px */
+h3 {font-size: 20px;}/* 20px */
+h4 {font-size: 16px;}/* 16px */
+h5 {font-size: 14px;}/* 14px */
+h6 {font-size: 12px;}/* 12px */
+
+/* @end */
+a
+{
+	border-bottom: 1px dotted #47b6ed;
+	color: #1594D4;
+}
+a:hover
+{
+	border-color: #fff;
+	color: #47b6ed;
+}
+
+acronym,
+abbr
+{
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+/* @group q, bockquote, cite */
+q,
+blockquote
+{
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+blockquote {font-size: 13px;}
+
+blockquote cite
+{
+  display: block;
+  font-size: 12px;
+  margin: 10px 0 0 0;
+}
+
+/* STANDARD QUOTES */
+
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+q:lang(sv) { quotes: '\201D' '\201D' '\2019' '\2019'; }
+q:lang(da) { quotes: '\00BB' '\00AB' '\203A' '\2039'; }
+
+q:before { content: open-quote; }
+q:after  { content: close-quote; }
+
+/* SAFARI SUPPORT */
+
+q:before   { content: '\201C'; }
+q:after    { content: '\201D'; }
+q q:before { content: '\2018'; }
+q q:after  { content: '\2019'; }
+
+/* BLOCKQUOTES */
+
+blockquote * { quotes: none; }
+blockquote > *:before { content: '\201C'; }
+blockquote > *:after  { content: '\201D'; }
+blockquote q:before   { content: '\2018'; }
+blockquote q:after    { content: '\2019'; }
+
+/* LANGUAGE-SPECIFIC QUOTES SAFARI STYLE */
+
+*[lang~='da'] q:before, q[lang~='da']:before,
+*[lang~='da'] blockquote > *:before, blockquote[lang~='da'] > *:before { content: '\201E'; }
+
+*[lang~='da'] q:after, q[lang~='da']:after,
+*[lang~='da'] blockquote > *:after, blockquote[lang~='da'] > *:after { content: '\201C'; }
+
+*[lang~='da'] q q:before, q[lang~='da'] q:before,
+*[lang~='da'] blockquote q:before, blockquote[lang~='da'] q:before { content: '\2019'; }
+
+*[lang~='da'] q q:after, q[lang~='da'] q:after,
+*[lang~='da'] blockquote q:after, blockquote[lang~='da'] q:after { content: '\2019'; }
+
+*[lang~='sv'] q:before, q[lang~='sv']:before,
+*[lang~='sv'] blockquote > *:before, blockquote[lang~='sv'] > *:before { content: '\201D'; }
+
+*[lang~='sv'] q:after, q[lang~='sv']:after,
+*[lang~='sv'] blockquote > *:after, blockquote[lang~='sv'] > *:after { content: '\201D'; }
+
+*[lang~='sv'] q q:before, q[lang~='sv'] q:before,
+*[lang~='sv'] blockquote q:before, blockquote[lang~='sv'] q:before { content: '\2019'; }
+
+*[lang~='sv'] q q:after,  q[lang~='sv'] q:after,
+*[lang~='sv'] blockquote q:after, blockquote[lang~='sv'] q:after { content: '\2019'; }
+
+cite {}
+/* @end */
+kbd
+{
+  background: #eee;
+  border-top: .15em solid #ccc;
+  border-right:.25em solid #aaa;
+  border-bottom:.3em solid #888;
+  border-left:.2em solid #bbb;
+  color: #000;
+  font-size: 1em;
+  font-weight: normal;
+  font-family: "Lucida console", Courier, monospace, sans-serif;
+  line-height: 2;
+  padding: .05em .2em;
+}
+
+/* @group lists */
+ul, ol{}
+
+ol{}
+
+ul li,
+ol li
+{margin: 0 0 5px 0;}
+
+dl{}
+
+dt, dd{margin: 0;}
+
+dt{font-weight: bold;}
+
+dd{}
+/* @end */
+
+/* @group forms */
+form{}
+
+fieldset
+{
+  border: 1px solid #ccc;
+  border-top: 4px solid #ccc;
+  margin: 0 0 20px 0;
+  padding: 10px;
+}
+
+legend{display: none;}
+
+/* Elemento que hace las veces de label cuando éste no interesa o no puede ser usado. */
+label
+{
+	display: block;
+	line-height: 1;
+	margin: 0 0 10px 0;
+	padding: 6px 0;
+}
+
+label, input, select, optgroup, option, textarea
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 13px;
+	font-style: italic;
+}
+
+input{}
+
+optgroup {font-style: normal;}
+
+option
+{
+  background: #fff;
+  cursor: pointer;
+  padding: 0 0 0 10px;
+}
+
+input,
+select,
+optgroup,
+option,
+textarea
+{
+  background-color: #fff;
+}
+
+input,
+select,
+textarea
+{
+  border: 1px solid;
+  border-bottom-color: #d2d2d2;
+  border-left-color: #acacac;
+  border-right-color: #acacac;
+  border-top-color: #6f6f6f;
+}
+
+input,
+textarea
+{background: #fff url(../../images/css/bg/input.gif) no-repeat;}
+
+select,
+input,
+textarea
+{
+  margin: 0 0 5px 0;
+  padding: 4px;
+}
+
+textarea {overflow: auto;}
+
+input:hover,
+select:hover,
+textarea:hover
+{
+  border-color: #aaa;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus
+{border-color: #666;}
+
+button
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+button:hover{}
+button:focus{}
+/* @end */
+
+
+/* @group tables */
+table, caption, thead, th, tr, td
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table, thead, th, tr, td {border: 1px solid #ccc;}
+
+table
+{
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+caption
+{
+  border-top: 1px solid #ccc;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', LucidaGrande,'Lucida Sans', Geneva, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 5px;
+}
+
+th
+{
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td
+{
+  padding: 5px;
+  vertical-align: top;
+}
+
+/* @group thead */
+thead
+{
+  background: #333;
+  color: #fff;
+}
+
+thead th{background: #333;}
+/* @end */
+
+
+/* @group tbody */
+tbody{}
+/* @end */
+
+
+/* @group tfoot */
+tfoot{}
+/* @end */
+/* @end */
+iframe {margin: 0;}
+/* @end */
+
+/* @group Global Styles */
+
+/* @group Estructural elements */
+
+/* Envuelve el contenido central de los bloques principales (header, container, footer, etc.) para darles un ancho y centrarlos en la página */
+.inside
+{
+	margin: 0 auto;
+	width: 960px;
+}
+
+/* @group #header */
+
+#header
+{
+	background: #222;
+	color: #fff;
+	margin: 0;
+}
+
+#header .inside
+{
+	background: url(/images/css/bg/header_inside.jpg) no-repeat center;
+	position: relative;
+}
+
+#header img
+{
+	display: block;
+	margin: 0 auto;
+}
+
+#logo_parliament
+{
+	-moz-border-radius-bottomleft: 10px;
+  	-moz-border-radius-bottomright: 10px;
+  	-webkit-border-bottom-left-radius: 10px;
+  	-webkit-border-bottom-right-radius: 10px;
+	background: #fff;
+	margin: 0 0 40px 0;
+	padding: 20px 0;
+	width: 307px;
+}
+
+/* @group .lang */
+.lang
+{
+	float: right;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top: 20px;
+}
+
+.lang li
+{
+	float: left;
+	margin: 0 3px 0 0;
+}
+
+.lang li a
+{
+	background: #111;
+	padding: 5px;
+}
+
+.lang li a:hover
+{
+	
+}
+
+.lang li a.active,
+.lang li a.active:hover
+{
+	
+}
+/* @end */
+
+/* @group #global_search */
+#global_search
+{
+	float: right;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top: 60px;
+}
+
+#global_search label
+{
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+#global_search input
+{
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+#global_search button
+{
+	float: left;
+}
+/* @end */
+
+/* @group .main_menu */
+.main_menu
+{
+	margin: 0;
+}
+
+.main_menu li
+{
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+.main_menu li a
+{
+	-moz-border-radius-topleft: 5px;
+  	-moz-border-radius-topright: 5px;
+  	-webkit-border-top-left-radius: 5px;
+  	-webkit-border-top-right-radius: 5px;
+  	background: #333;
+  	color: #999;
+  	border: none;
+	display: block;
+	font-size: 18px;
+	padding: 5px 10px;
+}
+
+.main_menu li a:hover
+{
+  	background: #999;
+  	color: #bbb;
+}
+
+.main_menu li.active a
+{
+  	background: #fff;
+  	color: #333;
+}
+
+/* @end */
+
+/* @end */
+.content
+{
+	background: url(/images/css/bg/content.png) repeat-x left 1px;
+}
+
+.content .inside
+{
+	padding: 20px 0 0 0;
+}
+
+.col_left
+{
+	background: #f2f2f2;
+	float: left;
+	margin: 0 40px 0 0;
+	width: 200px;
+}
+
+.main_content
+{
+	background: #f2f2f2;
+	float: left;
+	width: 720px;
+}
+
+/* @group .footer */
+
+#footer
+{
+	background: #222;
+	color: #fff;
+	margin: 0;
+	padding: 10px 0 40px 0;
+}
+
+#footer p
+{
+	margin: 0;
+	text-shadow: 1px 1px 1px #000;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Modules */
+
+/* @group .presentation */
+
+.presentation
+{
+	background: url(/images/css/bg/presentation.gif) no-repeat left 120px;
+	margin: 0;
+	padding: 30px 0 30px 300px;
+}
+
+.intro
+{
+	margin: 0 0 30px 0;
+}
+
+.intro h2
+{
+	font-size: 30px;
+	margin: 0;
+}
+
+.intro p
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	font-style: italic;
+}
+
+.parlio_definition h3
+{
+	margin: 0;
+}
+
+.parlio_definition ul li
+{
+	margin: 0 0 15px 0;
+}
+
+.parlio_definition .yes
+{
+	border-left: 1px solid #ccc;
+	float: left;
+	margin: 0 50px 0 0;
+	padding: 0 0 0 10px;
+	width: 250px;
+}
+
+.parlio_definition .no
+{
+	border-left: 1px solid #ccc;
+	float: left;
+	margin: 0;
+	padding: 0 0 0 10px;
+	width: 250px;
+}
+
+/* @end */
+
+.parliament_activity{}
+
+/* @group .index_cols */
+/* Columnas de la home */
+.index_cols
+{
+	margin: 0 0 40px 0;
+}
+
+.index_cols .index_col
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;  	
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 20px;
+	width: 260px;
+}
+
+.index_cols .index_col h2
+{
+	line-height: 1;
+}
+
+.index_cols .parliament_activity
+{
+	
+}
+
+.index_cols .parliament_activity .last_activity
+{
+	margin: 0 0 20px 0;
+}
+
+.index_cols .parliament_activity .last_activity .label
+{
+	
+}
+
+.index_cols .parliament_activity .last_activity .label a
+{
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;  	
+	background: #333;
+	border: none;
+	color: #fff;
+	float: left;
+	font-size: 12px;
+	margin: 0;
+	padding: 5px;
+	text-shadow: 1px 1px 1px #000;
+	text-transform: uppercase;
+}
+
+.index_cols .parliament_activity .last_activity .label a:hover
+{
+	background: #666;
+	border: none;
+	color: #fff;
+}
+
+.index_cols .parliament_activity .last_activity p
+{
+	margin: 0;
+}
+
+.index_cols .current_subjects
+{
+	
+}
+
+.index_cols .current_subjects .categories
+{
+	
+}
+
+.index_cols .current_subjects .categories ul
+{
+	
+}
+
+.index_cols .current_subjects .categories li
+{
+	
+}
+
+.index_cols .current_subjects .categories li a
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #e5e5e5;
+  	border: none;
+  	color: #333;
+  	display: block;
+  	padding: 5px 10px;
+  	text-align: center;
+  	text-shadow: 1px 1px 1px #fff;
+}
+
+.index_cols .current_subjects .categories li a:hover
+{
+  	background: #333;
+  	border: none;
+  	color: #fff;
+  	text-shadow: 1px 1px 1px #000;
+}
+
+.index_cols .parliamentarians_list
+{
+	margin: 0;
+}
+
+.index_cols .parliamentarians_list .parliamentarians_list
+{
+	border-top: 1px solid #ddd;
+}
+
+.index_cols .parliamentarians_list .parliamentarian
+{
+	border-bottom: 1px solid #ddd;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+
+.index_cols .parliamentarians_list .parliamentarian .main
+{
+	width: 190px;
+}
+
+.index_cols .parliamentarians_list .parliamentarian .main .label
+{
+	margin: 0 0 3px 0;
+}
+
+.index_cols .parliamentarians_list .parliamentarian .main .label a
+{
+	background: #1594d4;
+	border: none;
+	color: #fff;
+	padding: 3px 5px;
+}
+
+.index_cols .parliamentarians_list .parliamentarian .main .label a:hover
+{
+	background: #47b6ed;
+	color: #fff;
+}
+/* @end */
+
+/* @group .activity_list */
+.activity_list{}
+
+/* @group .activity */
+/* Clase común para los distintos tipos de actividad: discussion, subject, commission */
+.activity{}
+/* @end */
+/* @end */
+
+/* @group .commission */
+
+.commission{}
+
+
+
+/* @end */
+
+.current_subjects{}
+
+/* @group .label */
+
+.label{}
+.discussion_label{}
+.subject_label{}
+.commission_label{}
+
+/* @end */
+
+.party_name
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #333;
+	border: none;
+	color: #fff;
+	font-size: 9px;
+	font-weight: bold;
+	padding: 3px 5px;
+	text-shadow: 1px 1px 1px #000;
+	text-transform: uppercase;
+}
+
+.party_name:hover
+{
+	background: #e5e5e5;
+	color: #666;
+	text-shadow: none;
+}
+
+/* @group .pag_nav */
+.pag_nav
+{
+	margin: 0 0 40px 0;
+}
+
+.pag_nav a,
+.pag_nav span
+{
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	border-style: solid;
+	border-width: 2px;
+	display: block;
+	float: left;
+	margin: 0 .25em .25em 0;
+	padding: .25em .5em;
+	text-transform: uppercase;
+}
+
+.pag_nav a
+{
+	background: #fff;
+	border-color: #ccc;
+	color: #666;
+}
+
+.pag_nav a:hover
+{
+	background: #fff;
+	border-color: #999;
+	color: #999;
+}
+
+.pag_nav a:active
+{
+	background: #fff;
+	border-color: #333;
+	color: #333;
+}
+
+a {border-bottom: 1px dotted #47b6ed;color: #1594D4;}
+a:hover {color: #47b6ed;}
+
+.pag_nav .prev_page,
+.pag_nav .next_page
+{
+	background: #1594D4;
+	border-color: #f2f2f2;
+	color: #fff;
+}
+
+.pag_nav a.prev_page:hover,
+.pag_nav a.next_page:hover
+{
+	background: #47b6ed;
+	border-color: #ccc;
+	color: #fff;
+}
+
+.pag_nav a.prev_page:active,
+.pag_nav a.next_page:active
+{
+	background: #3f4034;
+	border-color: #3f4034;
+	color: #fff;
+}
+
+.pag_nav .prev,
+.pag_nav .next
+{
+	
+}
+
+.pag_nav .start
+{
+	
+}
+
+.pag_nav span.disabled
+{
+	background: #ccc;
+	border-color: #f2f2f2;
+	color: #fff;
+	cursor: default;
+}
+
+.pag_nav span.current
+{
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	background: #47b6ed;
+	border: 2px solid #47b6ed;
+	color: #fff;
+	display: block;
+	float: left;
+	margin: 0 .25em .25em 0;
+	padding: .25em .5em;
+}
+
+
+/* @end */
+
+/* @group .activity_meta */
+/* Datos de una actividad */
+.activity_meta
+{
+	-moz-border-radius: 15px;
+  	-webkit-border-radius: 15px;
+	background: #eef9ff;
+	border: 1px solid #c2ebff;
+	padding: 15px;
+	text-shadow: 1px 1px 2px #fff;
+}
+/* @end */
+
+/* @group .evolution_mod */
+/* Evolución de una actividad */
+.evolution_mod
+{
+	
+}
+
+.evolution_sheet
+{
+	
+}
+
+.evolution_sheet dd
+{
+	margin: 0 0 15px 0;
+}
+/* @end */
+
+/* @group Parliamentarians */
+
+.parliamentarians_mod{margin: 0 0 40px 0;}
+
+.parliamentarians_list{}
+
+/* @group .parliamentarian */
+
+.parliamentarian{}
+.parliamentarian .photo{}
+
+.parliamentarian .name
+{
+	font-size: 15px;
+	margin: 0 0 10px 0;
+}
+
+.parliamentarian .party
+{
+	margin: 0 0 5px 0;
+}
+
+.parliamentarian .party_name{}
+.parliamentarian .label{}
+.parliamentarian .date{}
+
+.parliamentarian .photo
+{
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.parliamentarian .main
+{
+	float: left;
+	margin: 0;
+}
+
+.parliamentarian .turn_meta
+{
+	margin: 0;
+}
+/* @end */
+
+/* @group .parliamentarian_sheet */
+.parliamentarian_sheet
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f2f2f2;
+	margin: 0 0 40px 0;
+	padding: 20px 20px 0 20px;
+}
+
+.parliamentarian_sheet h1
+{
+	font-size: 18px;
+}
+
+.parliamentarian_sheet .photo
+{
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.parliamentarian_sheet .main
+{
+	float: left;
+	width: 788px;
+}
+
+.parliamentarian_status
+{
+	
+}
+
+.parliamentarian_status span
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+  	background: #666;
+  	color: #fff;
+	display: block;
+	float: left;
+	font-size: 11px;
+	padding: 5px 10px;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.parliamentarian_status.active span {background: #9fb200;}
+.parliamentarian_status.retired span {background: #b21500;}
+
+.parliament_data
+{
+	
+}
+
+.parliament_data dl.line
+{
+	float: left;
+	margin: 0 20px 0 0;
+	width: 340px;
+}
+/* @end */
+
+
+/* @group .parliamentarian_activity */
+.parliamentarian_activity
+{
+	
+}
+
+/* @group .legislature_menu */
+
+.legislature_menu
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 20px;
+	width: 160px;
+}
+
+.legislature_menu ul
+{
+	
+}
+
+.legislature_menu li
+{
+	
+}
+
+.legislature_menu li a
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #fff;
+	border: none;
+	color: #666;
+	display: block;
+	float: left;
+	padding: 5px 10px;
+}
+
+.legislature_menu li.active a
+{
+	background: #47EDA9;
+	color: #fff;
+}
+/* @end */
+
+/* @group .parliamentarian_activity_cont */
+.parliamentarian_activity_cont
+{
+	float: left;
+	width: 730px;
+}
+
+.parliamentarian_activity_cont .discussion_list {}
+.parliamentarian_activity_cont .discussion_list .discussion {}
+
+/* @group .parliamentarian_activity_menu */
+.parliamentarian_activity_menu {}
+
+.parliamentarian_activity_menu li
+{
+	float: left;
+	margin: 0;
+}
+
+.parliamentarian_activity_menu li a
+{
+	background: #f2f2f2;
+	border: 1px solid #ccc;
+	color: #333;
+	display: block;
+	font-size: 14px;
+	padding: 5px 10px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.parliamentarian_activity_menu li a:hover
+{
+	background: #e5e5e5;
+	color: #666;
+}
+
+.parliamentarian_activity_menu li.active a
+{
+	background: #333;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.parliamentarian_activity_menu li.first a
+{
+	-moz-border-radius-bottomleft: 20px;
+	-moz-border-radius-topleft: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-webkit-border-top-left-radius: 20px;
+}
+
+.parliamentarian_activity_menu li.last a
+{
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-topright: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+}
+/* @end */
+
+
+/* @group .parliamentarian_commission_menu */
+.parliamentarian_commission_menu
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+  	border: 10px solid #f2f2f2;
+  	padding: 20px;
+}
+/* @end */
+
+
+/* @end */
+/* @end */
+/* @end */
+
+/* @group Party */
+.party_sheet
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f2f2f2;
+	margin: 0 0 40px 0;
+	padding: 20px;
+}
+
+.party_sheet .main .party_logo a
+{
+	background: #fff;
+	border: 1px solid #ccc;
+	display: block;
+	float: left;
+	margin: 0 20px 0 0;
+	padding: 3px;
+}
+
+.party_sheet .main .party_logo a:hover
+{
+	border: 1px solid #999;
+}
+
+.party_sheet .main
+{
+	float: left;
+	margin: 0 30px 0 0;
+	width: 200px;
+}
+
+.party_sheet .news
+{
+	float: left;
+	margin: 0 30px 0 0;
+	width: 350px;
+}
+
+.party_sheet .most_active_parliamentarians
+{
+	float: left;
+	width: 300px;
+}
+
+/* @group .party_activity_cont */
+.party_activity_cont
+{
+	float: left;
+	width: 730px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian
+{
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+	background: #f2f2f2;
+	float: left;
+	margin: 0 15px 15px 0;
+	height: 70px;
+	padding: 3px;
+	width: 160px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian .name
+{
+	font-size: 14px;
+	top: 5px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian .main
+{
+	width: 104px;
+}
+
+.party_activity_cont .parliamentarians_list .parliamentarian .main .spokesman
+{
+	font-size: 11px;
+	font-weight: bold;
+}
+/* @group .party_activity_menu */
+.party_activity_menu {}
+
+.party_activity_menu li
+{
+	float: left;
+	margin: 0;
+}
+
+.party_activity_menu li a
+{
+	background: #f2f2f2;
+	border: 1px solid #ccc;
+	color: #333;
+	display: block;
+	font-size: 14px;
+	padding: 5px 10px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.party_activity_menu li a:hover
+{
+	background: #e5e5e5;
+	color: #666;
+}
+
+.party_activity_menu li.active a
+{
+	background: #333;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.party_activity_menu li.first a
+{
+	-moz-border-radius-bottomleft: 20px;
+	-moz-border-radius-topleft: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-webkit-border-top-left-radius: 20px;
+}
+
+.party_activity_menu li.last a
+{
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-topright: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+}
+/* @end */
+
+
+/* @end */
+/* @end */
+
+/* @group Tags */
+/* @group .tag */
+.tag
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;	
+	background: #333 url(/images/css/bullets/bullet_tag.png) no-repeat 8px 6px;
+	border: none;
+	color: #fff;
+	display: block;
+	float: left;
+	text-shadow: 1px 1px 1px #000;
+	padding: 4px 8px 4px 29px;
+}
+
+.tag:hover
+{
+	background-color: #999;
+	border-color: #777;
+	color: #ddd;
+	text-shadow: 1px 1px 1px #222;
+}
+/* @end */
+
+/* @group .tag_mod */
+/* Lista de tags */
+.tag_mod
+{
+	margin: 0 0 20px 0;
+}
+
+.tag_mod .tag_mod_title
+{
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 5px 0;
+}
+
+.tag_mod .tag_list
+{
+	float: left;
+}
+/* @end */
+
+/* @group .tag_list */
+
+.tag_list
+{
+	
+}
+
+.tag_list li
+{
+	float: left;
+	margin: 0 3px 3px 0;
+}
+
+.tag_list li .tag
+{
+	
+}
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group Files */
+
+/* @group .file_mod */
+/* Bloque de documentos */
+.file_mod
+{
+	margin: 0 0 20px 0;
+}
+/* @end */
+
+
+/* @group .file_list */
+/* Lista de documentos */
+.file_list
+{
+	border-top: 1px dotted #ccc;
+}
+
+.file_list li
+{
+	border-bottom: 1px dotted #ccc;
+	margin: 0;
+}
+
+/* @end */
+
+/* @group .file */
+/* Enlace de un archivo */
+.file
+{
+	border-bottom: none;
+	display: block;
+	float: left;
+	padding: 3px 0;
+}
+
+.file span
+{
+	display: block;
+	float: left;
+	padding: 3px;
+}
+
+.file_pdf
+{
+	background: url(/images/css/bullets/bullet_pdf.png) no-repeat left 4px;
+	padding: 0 0 0 18px;
+}
+
+.file_realvideo
+{
+	background: url(/images/css/bullets/bullet_realvideo.png) no-repeat left 4px;
+	padding: 0 0 0 18px;
+}
+
+.file .date
+{
+	background: #ffc;
+	color: #333;
+	width: 70px;
+}
+
+.file .file_title
+{
+	float: left;
+}
+
+.file .file_meta
+{
+	color: #333;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.file:hover
+{
+	
+}
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group Turns */
+
+/* @group .turn_mod */
+.turn_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #111;
+	margin: 0 0 20px 0;
+	padding: 10px;
+}
+
+.turn_mod_title
+{
+	color: #fff;
+}
+/* @end */
+
+
+/* @group .turn_list */
+.turn_list
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #333;
+	padding: 10px;
+}
+/* @end */
+
+
+/* @group .turn */
+.turn
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #eef9ff;
+	padding: 10px;
+}
+
+.turn_main
+{
+	border: 10px solid #ddd;
+}
+
+.turn .parliamentarian
+{
+	
+}
+
+.turn .file_list
+{
+	
+}
+/* @end */
+
+
+
+/* @end */
+
+/* @group Subjects */
+.subject_list{}
+
+/* @group .subject */
+.subject
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #eef9ff;
+	margin: 0 0 20px 0;
+	padding: 20px;
+}
+
+.subject .tag_mod
+{
+	margin: 0;
+}
+
+.subject .title
+{
+	
+}
+
+.subject .title a
+{
+	border: none;
+}
+
+.activity_type
+{
+	
+}
+
+.activity_type span
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #ffc;
+	border: 1px solid #ccc;
+	display: block;
+	float: left;
+	padding: 5px 10px;
+}
+
+.subject .activity_meta
+{
+	background: #fff;
+}
+/* @end */
+
+
+
+/* @end */
+
+/* @group Tabs */
+
+/* @group .tab_system */
+.tab_system
+{
+	
+}
+
+/* @group .tab_menu */
+.tab_menu
+{
+	font-size: 18px;
+	margin: 0;
+	position: relative;
+	top: 1px;
+}
+
+.tab_menu li
+{
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+.tab_menu li a
+{
+	-moz-border-radius-topleft: 5px;
+  	-moz-border-radius-topright: 5px;
+  	-webkit-border-top-left-radius: 5px;
+  	-webkit-border-top-right-radius: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	color: #333;
+	display: block;
+	padding: 5px 10px;
+}
+
+.tab_menu li a:hover
+{
+	color: #ccc;
+}
+
+.tab_menu li.active a,
+.tab_menu li.active a:hover
+{
+	background: #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	color: #ccc;
+	cursor: default;
+}
+
+/* @end */
+
+.tab_cont
+{
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 30px;
+	width: 898px;
+}
+
+/* @end */
+
+/* @group .tab_system_subjects */
+
+/* Tab de Asuntos */
+.tab_system_subjects
+{
+	
+}
+
+/* @group .subject_cat */
+/* Menú de categorías de Asuntos */
+.subject_cat
+{
+	float: left;
+	margin: 0 30px 0 0;
+	width: 200px;
+}
+
+.subject_cat ul
+{
+	
+}
+
+.subject_cat li
+{
+	
+}
+
+.subject_cat li a
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #fff;
+	border: 3px solid #eee;
+	color: #333;
+	display: block;
+	float: left;
+	text-shadow: 1px 1px 1px #ccc;
+	padding: 5px 10px;
+}
+
+.subject_cat li a:hover
+{
+	background: #999;
+	border-color: #777;
+	color: #ddd;
+	text-shadow: 1px 1px 1px #222;
+}
+
+.subject_cat li.active a
+{
+	background: #47eda9;
+	border-color: #3fd496;
+	color: #298760;
+	cursor: default;
+	text-shadow: 1px 1px 1px #fff;
+}
+/* @end */
+
+/* @group .subject_cont */
+/* Contenido principal del tab de Asuntos */
+.subject_cont
+{
+	float: left;
+	width: 668px;
+}
+
+.subject_cont.subject_cont_category
+{
+	margin: 0 30px 0 0;
+	width: 438px;
+}
+.subject_latest
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #d4f0ff;
+	margin: 0 0 40px 0;
+	padding: 20px;
+}
+
+/* @group .activity_stats */
+.activity_stats
+{
+	
+}
+
+.activity_stats_col
+{
+	width: 320px;
+}
+
+.activity_stats_col_left {float: left;}
+.activity_stats_col_right {float: right;}
+
+/* @group .activity_stat */
+.activity_stat
+{
+	margin: 0 0 40px 0;
+}
+/* @end */
+
+/* @group .most_active_cats */
+.most_active_cats
+{
+	
+}
+/* @end */
+
+/* @group .most_active_parties */
+.most_active_parties
+{
+	
+}
+/* @end */
+
+/* @group .most_recent_tags */
+.most_recent_tags
+{
+	
+}
+
+.most_recent_tags .subject_num
+{
+	display: block;
+	float: left;
+	padding: 5px;
+}
+
+.most_recent_tags li
+{
+	
+}
+/* @end */
+
+/* @group .most_active_parliamentarians */
+.most_active_parliamentarians
+{
+	
+}
+/* @end */
+/* @end */
+/* @end */
+
+/* @group .subject_sidebar */
+.subject_sidebar
+{
+	float: left;
+	width: 200px;
+}
+
+.subject_sidebar h2
+{
+	font-size: 14px;
+	text-transform: uppercase;
+}
+/* @end */
+/* @end */
+
+/* @group .tab_system_commissions */
+
+/* Tab de Comisiones */
+.tab_system_commissions
+{
+	
+}
+
+/* @group .current_commissions */
+/* Menú de comisiones actuales */
+.current_commissions
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 20px;
+	width: 160px;
+}
+
+.current_commissions ul
+{
+	border-top: 1px dotted #ccc;
+}
+
+.current_commissions li
+{
+	border-bottom: 1px dotted #ccc;
+	line-height: 1.2;
+}
+
+.current_commissions li a
+{
+	border: none;
+	display: block;
+	padding: 5px;
+}
+
+.current_commissions li a:hover
+{
+	
+}
+
+.current_commissions li.active a
+{
+	background: #47eda9;
+	border-color: #3fd496;
+	color: #298760;
+	cursor: default;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.current_commissions li.active a:hover
+{
+	background: #38ba84;
+}
+/* @end */
+
+/* @group .commission_cont */
+/* Contenido principal del tab de Asuntos */
+.commission_cont
+{
+	float: left;
+	width: 668px;
+}
+
+.commission_title
+{
+	border-bottom: 1px solid #ddd;
+	padding: 0 0 5px 0;
+}
+
+.commission_cont_cols
+{
+	
+}
+
+.commission_cont_col
+{
+	width: 310px;
+}
+
+.commission_cont_col .file_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #f2f2f2;
+  	padding: 20px;
+}
+
+.commission_cont_col_left
+{
+	float: left;
+}
+
+.commission_cont_col_right
+{
+	float: right;
+}
+/* @end */
+/* @end */
+
+/* @group .tab_system_discussions */
+.tab_system_discussion
+{
+	
+}
+
+/* @group .sessions_menu */
+.sessions_menu
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	background: #f5f5f5;
+	float: left;
+	margin: 0 30px 0 0;
+	padding: 10px;
+	text-align: center;
+	width: 120px;
+}
+
+.session_menu_year
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #fff;
+  	padding: 10px;
+}
+
+.session_menu_year ul
+{
+	border-top: 1px solid #f2f2f2;
+}
+
+.session_menu_year li
+{
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.session_menu_year li a
+{
+	border: none;
+	cursor: pointer;
+	display: block;
+	padding: 5px;
+}
+
+.session_menu_year li.active a
+{
+	background: #47eda9;
+	color: #fff;
+	text-shadow: 1px 1px 1px #333;
+}
+
+.session_menu_year li a:hover
+{
+	border: none;
+}
+/* @end */
+
+/* @group .discussion_cont */
+/* Contenido principal del tab de Debates */
+.discussion_cont
+{
+	float: left;
+	width: 728px;
+}
+
+.discussion_title
+{
+	border-bottom: 1px solid #ddd;
+	padding: 0 0 5px 0;
+}
+
+.discussion_cont_cols
+{
+	
+}
+
+.discussion_cont_col
+{
+	width: 310px;
+}
+
+.discussion_cont_col .file_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #f2f2f2;
+  	padding: 20px;
+}
+
+.discussion_cont_col_left
+{
+	float: left;
+}
+
+.discussion_cont_col_right
+{
+	float: right;
+}
+
+/* @group .discussion_list */
+.discussion_list
+{
+	
+}
+
+.discussion_list .discussion .title
+{
+	font-size: 14px;
+}
+
+/* @group .discussion */
+.discussion
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #dceef7;
+  	padding: 20px 20px 10px 20px;
+}
+/* @end */
+/* @end */
+/* @end */
+
+/* @group .discussion_sidebar */
+.discussion_sidebar
+{
+	float: right;
+	width: 200px;
+}
+/* @end */
+
+/* @end */
+/* @end */
+
+/* @group Commissions */
+.commission_list {}
+.commission {margin: 0 0 15px 0;}
+.commission a {}
+.commission span {display: block;}
+
+/* @group .commissions_participants */
+.commissions_participants
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #dceef7;
+  	margin: 0 0 40px 0;
+  	padding: 20px 20px 10px 20px;
+}
+
+.commissions_participants .commissions_participants_title
+{
+	background: #fff;
+	border-bottom: 1px solid #666;
+	font-size: 18px;
+	padding: 10px;
+}
+
+.commission_participant
+{
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #fff;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+/* @end */
+
+/* @end */
+
+/* @group Votes */
+
+/* @group .votes_mod */
+.votes_mod
+{
+	
+}
+
+.votes_list
+{
+	
+}
+
+.vote
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+  	background: #f2f2f2;
+  	padding: 20px;
+}
+/* @end */
+/* @end */
+
+
+.date
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.title{}
+.author{}
+.subject_num{}
+
+/* @group .photo */
+.photo {}
+
+.photo a
+{
+	background: #fff;
+	display: block;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.photo a:hover
+{
+	background: #f2f2f2;
+	border-color: 1px solid #999;
+}
+/* @end */
+
+/* @group .rss_mod */
+/* Enlace de suscripción a RSS */
+.rss_mod
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	border: 2px solid #ccc;
+	cursor: pointer;
+	display: block;
+	padding: 10px;
+	width: 200px;
+}
+
+.rss_mod strong
+{
+	color: #333;
+	display: block;
+	font-family: "Museo 300", Museo, Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	margin: 0;
+}
+
+.rss_mod span
+{
+	display: block;
+	line-height: 1.2;
+}
+
+.rss_mod:hover
+{
+	-moz-border-radius: 10px;
+  	-webkit-border-radius: 10px;
+	border: 2px solid #ccc;
+	display: block;
+	padding: 10px;
+	width: 200px;
+}
+
+.rss_mod:hover strong
+{
+	color: #999;
+}
+
+/* @end */
+
+/* @group .balloon */
+.balloon
+{
+	-moz-border-radius: 20px;
+  	-webkit-border-radius: 20px;
+	background: #c00;
+	color: #fff;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	font-style: italic;
+	line-height: 1.2;
+	padding: 20px;
+}
+
+.balloon p
+{
+	margin: 0;
+}
+/* @end */
+
+
+/* @end */
+
+/* @group classes */
+
+/* Oculta elementos */
+.hide {display: none;}
+
+/* Texto bajo heading con estilo de claim */
+.claim
+{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 15px;
+	font-style: italic;
+	margin: -15px 0 25px 0;
+}
+
+/* Listado con bullet básico */
+ul.simpleBullet li
+{
+  background: url(/images/css/bullets/bullet.gif) no-repeat left .433em;
+  padding-left: 10px;
+}
+/* @group bullets */
+
+/*
+---------------------------
+Nota sobre uso de bullets:
+---------------------------
+.bulletDec:
+Elemento que sin ser enlace lleva un bullet a modo decorativo.
+Ej.: <p class="bulletDec bullet_date">Miércoles, 12 de febrero</p>
+---------------------------------------------------------------------------------------------
+.bulletListDec:
+Elementos de lista que llevan un bullet a modo decorativo.
+Ej.:
+<ul class="bulletListDec bullet_date">
+  <li>Miércoles, 12 de febrero</li>
+  <li>Jueves, 13 de febrero</li>
+</ul>
+---------------------------------------------------------------------------------------------
+a.bullet:
+Enlace con bullet.
+Ej.: <p class="bullet bullet_plus"><a href="#">más información sobre este sitio</a></p>
+---------------------------------------------------------------------------------------------
+.bulletList:
+Elementos de lista que contienen enlace con un mismo tipo de bullet.
+Ej. con mismo tipo de bullets:
+<ul class="bulletList bullet_date">
+  <li><a href="#">Miércoles, 12 de febrero</a></li>
+  <li><a href="#">Jueves, 13 de febrero</a></li>
+</ul>
+
+Ej. de listado con diferentes tipos de bullets:
+<ul class="bulletList">
+  <li class="bullet bullet_date"><a href="#">Miércoles, 12 de febrero</a></li>
+  <li class="bullet bullet_webcam"><a href="#">Sigue nuestra webcam</a></li>
+</ul>
+*/
+
+.bulletDec,
+.bulletListDec li,
+.bullet a,
+.bulletList li a
+{
+  background-position: left 3px;
+  background-repeat: no-repeat;
+  display: block;
+  float: left;
+  padding: .25em .5em .25em 21px;
+}
+
+.bullet a,
+.bulletList li a
+{float: left;}
+
+.bulletListDec li,
+.bulletList li
+{margin: 0;}
+
+.bulletList li
+{
+  background-image: none;
+  padding: 0;
+}
+
+
+/* Permite limpiar los flotados de los enlaces que lleva dentro cada elemento <li>  */
+.bullet:after,
+.bulletList li:after
+{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.bullet,
+.bulletList li
+{display: inline-block;}
+/* Hides from IE-mac \*/
+* html .bullet,
+* html .bulletList li
+{height: 1%;}
+.bullet,
+.bulletList li
+{display: block;}
+/* End hide from IE-mac */
+
+/* Tipos de bullets */
+.bullet.bullet_showCont a,
+.bulletDec.bullet_showCont,
+.bulletList.bullet_showCont li a,
+.bulletListDec.bullet_showCont li
+{background-image: url(../../images/css/bullets/control_000_small.png);}
+/* @end */
+
+
+/* Botones */
+/* @group .btn */
+/* Listado de botones en horizontal */
+.btnList li
+{
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+form .btnList {clear: both;}
+
+/* Clases aplicables a enlaces y a elementos <button> */
+.btn,
+.btn:hover,
+.btn:active
+{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  display: block;
+  float: left;
+  margin: 0 5px 3px 0;
+  padding: 3px 5px;
+  text-transform: uppercase;
+}
+
+input.btn {width: auto!important;}
+
+input.btn,
+input.btn:hover
+{padding: 3px 5px;}
+
+/* Hack para Safari (también afecta a Chrome) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input.btn,
+    input.btn:hover
+	{padding: 3px 5px;}
+}
+
+.btn:hover {cursor: pointer;}
+
+/* @group .btnTrans */
+
+.btnTrans
+{
+  border-color: transparent;
+  color: #666;
+}
+
+button.btnTrans {background: #fff;/* Si no se especifica ningún background, el elemento <button> muestra el suyo original de fábrica (gris) */}
+
+.btnTrans:hover
+{
+  background: #f2f2f2;
+  border-color: #f2f2f2;
+  color: #999;
+}
+
+.btnTrans:active
+{
+  border-color: transparent;
+  color: #333;
+}
+/* @end */
+
+
+/* @group .btnWhite */
+.btnWhite
+{
+  background: #fff;
+  border-color: #ccc;
+  color: #666;
+}
+
+.btnWhite:hover
+{
+  background: #fff;
+  border-color: #999;
+  color: #999;
+}
+
+.btnWhite:active
+{
+  background: #fff;
+  border-color: #333;
+  color: #333;
+}
+/* @end */
+
+
+/* @group .btnBlack */
+.btnBlack
+{
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.btnBlack:hover
+{
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.btnBlack:active
+{
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+/* @end */
+/* @end */
+
+/* @group .avatar */
+/* Listado de avatares en horizontal */
+.avatarList {margin: 0;}
+
+.avatarList li
+{
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+/* Avatares */
+a.avatar,
+.avatarImg
+{
+  display: block;
+  border: 2px solid #333;
+  float: left;
+}
+
+a.avatar img
+{
+  background: #fff;
+  border: 1px solid #000;
+  display: block;
+}
+
+a.avatar:hover {border: 2px solid #999;}
+
+a.avatar:hover img
+{
+  background: #e5e5e5;
+  border: 1px solid #222;
+}
+
+a.avatar.avatarDefault {border-color: #eaeaea;}
+a.avatar.avatarDefault img {border-color: #d9d9d9;}
+a.avatar.avatarDefault:hover {border-color: #ccc;}
+a.avatar.avatarDefault:hover img {border-color: #999;}
+/* @end */
+
+/* @group forms */
+
+/* @group label.clean */
+/* Para que no le aplique las propiedades de un input normal a los radio buttons y alos checkboxes */
+label.clean
+{
+  cursor: pointer;
+  display: inline;
+  font-weight: normal;
+  margin: 0 1em 0 0;
+  padding: 0;
+}
+
+label.clean input
+{
+  /* Para que IE no herede las propiedades del input*/
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 .25em 0 0;
+  position: relative;
+  top: .25em;
+}
+
+label.clean input:focus {outline: none;}
+/* @end */
+
+/* Asteriscos */
+.asteriskGreen {color: #390;}
+
+/* Example */
+.example
+{
+  background: url(/images/css/bullets/notebook__arrow.png) no-repeat .25em .5em;
+  font-size: .917em;
+  line-height: 1.2em;
+  padding: .5em .5em .5em 25px;
+}
+
+/* @group .note */
+/* Nota */
+.note
+{
+  background: #ffc url(/images/css/bg/sticky_note_text.png) no-repeat .25em .5em;
+  border: 1px solid #ff9;
+  padding: .5em .5em .5em 25px;
+}
+/* @end */
+
+
+/* Cajas de validación */
+/* @group .validationBox */
+/* Confirmación de envío con errores */
+.validationBox
+{
+  -moz-border-radius: .833em;
+  -webkit-border-radius: .833em;
+  line-height: 1.2;
+  padding: 10px;
+}
+/* @end */
+
+
+/* @group .errorBox */
+/* Confirmación de envío con errores */
+.errorBox, .not_valid_emailBox {background: #fcc;}
+.errorBox p, .not_valid_emailBox p {margin: 0;}
+.errorBox a, .not_valid_emailBox a {color: #900;}
+.errorBox a:hover, .not_valid_emailBox a:hover {color: #600;}
+/* @end */
+
+
+/* @group .successBox */
+/* Confirmación de envío correcto */
+.okBox, .gracefully_sentBox {background: #dfc;}
+.okBox p, .gracefully_sentBox p {margin: 0;}
+.okBox a, .gracefully_sentBox a {color: #390;}
+.okBox a:hover, .gracefully_sentBox a:hover {color: #52cc14;}
+/* @end */
+
+
+/* Reporte de errores */
+/* @group .errors */
+.errorExplanation {border: 1px solid #ffd9d9;}
+
+.errorExplanation h2
+{
+  background: #ffd9d9 url(/images/css/bg/errorTitle.gif) no-repeat 5px;
+  color: #c00;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  padding: 5px;
+}
+
+.errorExplanation p,
+.errorExplanation ul 
+{padding: .5em .5em 0 .5em;}
+.errorExplanation ul li {margin: 0;}
+.errorExplanation ul li a {color: #c00;}
+.errorExplanation ul li a:hover {color: #900;}
+ul li.errorField {background: #ffd9d9;}
+
+ul li.errorField label,
+ul li.errorField p.label
+{color: #c00;}
+/* @end */
+
+
+/* @group .formInline */
+.formInline {border-top: 1px dotted #ccc;}
+.formInline .btnList {margin: 0;}
+
+.formInline p
+{
+  clear: both;
+  margin: 0 0 5px 0;
+}
+
+.formInline li.line
+{
+  border-bottom: 1px dotted #ccc;
+  margin: 0;
+  padding: 10px 10px 5px 10px;
+}
+
+.formInline label,
+.formInline p.label
+{padding: 5px 0;}
+
+.formInline label,
+.formInline p.label,
+.formInline input,
+.formInline textarea,
+.formInline select,
+.formInline .example,
+.formInline .note
+{
+  float: left;
+  margin: 0 5px 5px 0;
+}
+
+.formInline label.clean,
+.formInline label.clean input
+{
+  float: none;
+  width: auto!important;
+}
+
+.formInline label.clean {display: inline;}
+.formInline label.clean input {margin: 0 5px 0 0;}
+
+/* Todo excepto el label. Puede contener input/select/textarea y notas, ejemplos, links, etc. */
+.formInline .fieldsAndCo
+{
+  float: left;
+  margin: 0;
+}
+
+.formInline .example,
+.formInline .note
+{
+  clear: none;
+  float: left;
+}
+
+/* Cuando no nos interesa que dentro de un elemento 'li' de un .formInline haya label e inputs/textareas/select en línea le aplicamos la clase '.notLine' al 'li' en cuestión */
+.formInline li.notLine {}
+
+.formInline li.notLine .note {clear: both;}
+
+.formInline li.notLine label,
+.formInline li.notLine p.label,
+.formInline li.notLine input,
+.formInline li.notLine textarea,
+.formInline li.notLine select
+{float: none;}
+
+.formInline li.notLine label,
+.formInline li.notLine p.label
+{
+  margin: 0 0 .5em 0;
+  text-align: left;
+  top: auto;
+  /* Se usa !important para evitar las reglas referidas mediante el ID del body de la página, ya que éstas resultan más específicas. */
+  width: auto!important;
+}
+/* @end */
+/* @end */
+
+
+/* @group dl.line */
+/* line: clase para que el dt y el dd van en la misma línea */
+dl.line dt
+{
+	background: url(../../images/css/bullets/dl-line_dt.gif) no-repeat left 2px;
+	clear: both;
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+dl.line dt,
+dl.line dd.block
+{padding: 0 0 0 18px;}
+
+dl.line dd.block {clear: both;}
+/* @end */
+
+/* @group .clearfix */
+/* Clearfix permite limpiar flotados. Mas info: http://www.positioniseverything.net/easyclearing.html  */
+.clearfix:after,
+.content .inside:after,
+.tab_menu:after,
+.tab_cont:after,
+.subject_cat li:after,
+.tag_mod:after,
+.tag_mod ul:after,
+.file_list li:after,
+.file:after,
+.activity_type:after,
+.most_recent_tags li:after,
+.parliamentarian:after,
+.main_menu:after,
+#global_search:after,
+.lang:after,
+.pag_nav:after,
+.commission_cont_cols:after,
+.parliamentarian_activity_menu:after,
+.parliamentarian_sheet:after,
+.parliament_data:after,
+.parliamentarian_status:after,
+.discussion_list:after,
+.legislature_menu li:after,
+.party_sheet:after,
+.party_activity_menu:after,
+.party_activity_cont .parliamentarians_list:after,
+.index_cols:after,
+.index_cols .parliament_activity .last_activity .label:after,
+.index_cols .current_subjects .categories li:after,
+.parlio_definition:after
+{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix,
+.content .inside,
+.tab_menu,
+.tab_cont,
+.subject_cat li,
+.tag_mod,
+.tag_mod ul,
+.file_list li,
+.file,
+.activity_type,
+.most_recent_tags li,
+.parliamentarian,
+.main_menu,
+#global_search,
+.lang,
+.pag_nav,
+.commission_cont_cols,
+.parliamentarian_activity_menu,
+.parliamentarian_sheet,
+.parliament_data,
+.parliamentarian_status,
+.discussion_list,
+.legislature_menu li,
+.party_sheet,
+.party_activity_menu,
+.party_activity_cont .parliamentarians_list,
+.index_cols,
+.index_cols .parliament_activity .last_activity .label,
+.index_cols .current_subjects .categories li,
+.parlio_definition
+{display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix,
+* html .content .inside,
+* html .tab_menu,
+* html .tab_cont,
+* html .subject_cat li,
+* html .tag_mod,
+* html .tag_mod ul,
+* html .file_list li,
+* html .file,
+* html .activity_type,
+* html .most_recent_tags li,
+* html .parliamentarian,
+* html .main_menu,
+* html #global_search,
+* html .lang,
+* html .pag_nav,
+* html .commission_cont_cols,
+* html .parliamentarian_activity_menu,
+* html .parliamentarian_sheet,
+* html .parliament_data,
+* html .parliamentarian_status,
+* html .discussion_list,
+* html .legislature_menu li,
+* html .party_sheet,
+* html .party_activity_menu,
+* html .party_activity_cont .parliamentarians_list,
+* html .index_cols,
+* html .index_cols .parliament_activity .last_activity .label,
+* html .index_cols .current_subjects .categories li,
+* html .parlio_definition
+{height: 1%;}
+
+.clearfix,
+.content .inside,
+.tab_menu,
+.subject_cat li,
+.tag_mod,
+.tag_mod ul,
+.file_list li,
+.file,
+.activity_type,
+.most_recent_tags li,
+.parliamentarian,
+.main_menu,
+#global_search,
+.lang,
+.pag_nav,
+.commission_cont_cols,
+.parliamentarian_activity_menu,
+.parliamentarian_sheet,
+.parliament_data,
+.parliamentarian_status,
+.discussion_list,
+.legislature_menu li,
+.party_sheet,
+.party_activity_menu,
+.party_activity_cont .parliamentarians_list,
+.index_cols,
+.index_cols .parliament_activity .last_activity .label,
+.index_cols .current_subjects .categories li,
+.parlio_definition
+{display: block;}
+/* End hide from IE-mac */
+/* @end */
+/* @end */
+/* @end */

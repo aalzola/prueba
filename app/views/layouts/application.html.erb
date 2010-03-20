@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <!-- Favicon -->
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" />
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+
+    <!-- CSS -->
+    <!-- Screen -->
+    <link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen" />
+
+    <!--[if IE]>
+      <link rel="stylesheet" href="/stylesheets/screen/ie.css" type="text/css" media="screen" />
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/stylesheets/screen/ie7.css" type="text/css" media="screen" />
+    <![endif]-->
+
+    <!--[if IE 6]>
+      <link rel="stylesheet" href="/stylesheets/screen/ie6.css" type="text/css" media="screen" />
+      <script type="text/javascript" src="/stylesheets/iepngfix_tilebg.js"></script>
+    <![endif]-->
+    
+    <%= javascript_include_tag :defaults %>
+  </head>
+
+  <body>
+    <%= render :partial => "shared/header" %>
+    <div class="content">
+      <div class="inside">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render :partial => "shared/footer" %>
+
+  </body>
+</html>

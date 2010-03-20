@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  comunidad: MyString
+  provincio: MyString
+  municipio: MyString
+  tipoVia: 
+  direccionVia: 
+  codigoPostal: 
+  telefono: 
+
+two:
+  comunidad: MyString
+  provincio: MyString
+  municipio: MyString
+  tipoVia: 
+  direccionVia: 
+  codigoPostal: 
+  telefono: 

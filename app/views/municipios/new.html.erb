@@ -1,0 +1,39 @@
+<h1>New municipio</h1>
+
+<% form_for(@municipio) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :comunidad %><br />
+    <%= f.text_field :comunidad %>
+  </p>
+  <p>
+    <%= f.label :provincio %><br />
+    <%= f.text_field :provincio %>
+  </p>
+  <p>
+    <%= f.label :municipio %><br />
+    <%= f.text_field :municipio %>
+  </p>
+  <p>
+    <%= f.label :tipoVia %><br />
+    <%= f.text_field :tipoVia %>
+  </p>
+  <p>
+    <%= f.label :direccionVia %><br />
+    <%= f.text_field :direccionVia %>
+  </p>
+  <p>
+    <%= f.label :codigoPostal %><br />
+    <%= f.text_field :codigoPostal %>
+  </p>
+  <p>
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', municipios_path %>

@@ -59,7 +59,7 @@ end
    #@matter.longitude = params[:longitude]
     respond_to do |format|
       if @matter.save
-        flash[:notice] = 'matter ha sido creado con exito.'
+        flash[:notice] = 'El asunto ha sido creado con exito.'
         format.html { redirect_to(@matter) }
         format.xml  { render :xml => @matter, :status => :created, :location => @matter }
       else

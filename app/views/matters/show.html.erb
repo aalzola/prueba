@@ -18,3 +18,14 @@
 
 <%= link_to 'Edit', edit_matter_path(@matter) %> |
 <%= link_to 'Back', matter_path %>
+
+<p>
+<%= link_to_remote "¡Quiero hacer un comentario!",
+  :url => { :controller => "comments", :action => "new" },
+  :update => { :success => "comment", :failure => "error" },
+  :complete => "Effect.Fade('quiero_comentar')",
+  :html => { :id => 'quiero_comentar' } %>
+</p>
+
+<div id="comment"></div>
+<div id="error"></div>

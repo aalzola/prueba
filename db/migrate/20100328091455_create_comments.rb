@@ -4,6 +4,8 @@ class CreateComments < ActiveRecord::Migration
       t.text :comment
       t.references :user
       t.references :matter
+      t.column :name, :string, :limit => 100, :default => '', :null => true
+      t.column :email, :string, :limit => 100
       t.timestamps
     end
     add_index :comments, :id

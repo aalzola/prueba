@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20100328091455) do
     t.text     "comment"
     t.integer  "user_id"
     t.integer  "matter_id"
+    t.string   "name",       :limit => 100, :default => ""
+    t.string   "email",      :limit => 100
     t.datetime "created_at"
     t.datetime "updated_at"
   end

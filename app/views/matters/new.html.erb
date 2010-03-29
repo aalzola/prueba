@@ -17,6 +17,14 @@
 	<p><label for="description">Describenos tu propuesta, queja...</label>
     <%= f.text_area :description, :cols => 100, :rows => 10 %></p>
 
+	<p id="mostrar_direccion" style=""><%= link_to_function("¡Quiero situar esto en el mapa!",
+	"Effect.Fade('mostrar_direccion'); Effect.Grow('elementos_direccion')")%></p>
+
+	<div id="elementos_direccion" style="display:none;">
+	
+	<p id="ocultar_direccion"><%= link_to_function("Lo he pensado mejor, no lo situaré...",
+	"Effect.Grow('mostrar_direccion'); Effect.Fade('elementos_direccion')")%></p>
+
     <p><label for="address">Dirección</label> <span>Sólo la calle, número... la ciudad ya la pones debajo :)</span><br/>
     <%= text_field(:matter, :address) %></p>
 
@@ -38,6 +46,7 @@
     <span>Ajusta el mapa un poquito arrastrando el punto si lo crees necesario. Si no quieres usar el mapa, pulsa en <%= link_to_remote 'ignorar mapa', {:url => {:controller => 'matter', :action => 'ignore_map'}, :complete => "nullify_map();  locate_div('place_operations'); "} %> </span>
     <div id="map" style="width:410px; height:200px;<%= "display:none;" if @matter.latitude.blank? || @matter.longitude.blank? %>"> </div>
     </p>
+	</div>
   </div>
 </div>
 

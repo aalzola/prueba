@@ -1,0 +1,74 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  sugerencias: Sugerencias
+  municipios: Municipios
+  hola: Hola , 
+  salir: Salir
+  no_conectado: No estas conectado
+  acceder: Acceder
+  crear_cuenta: Crear una cuenta nueva
+  cuenta_creada: Tu cuenta ha sido creada
+  visita_dirección: Visita esta dirección para activar tu cuenta
+  esperando_aportaciones: Estamos esperando tus aportaciones. ¡Gracias por participar!
+  seremos_buenos: Seremos buenos y no le daremos tu correo electrónico a nadie
+  usuario: Usuario
+  contraseña: Contraseña
+  confirmacion_contraseña: ¡La contraseña otra vez!
+  email: Correo electrónico
+  crea_cuenta: ¡Crea mi cuenta!
+  conectame: ¡Conectame!
+  acceder: Acceder
+  solicitud_cambio_contraseña: Has solicitado cambiar la contraseña
+  contraseña_reseteada: Tu contraseña ha sido inicializada de nuevo.
+  activa_cuenta: Por favor activa tu cuenta
+  hemos_activado: ¡Hemos activado tu cuenta!
+  conectado_correctamente: ¡Conectado correctamente!
+  desconectado: Te has desconectado.
+  no_puedes_conectarte: No puedes conectarte como
+  fallo_conexion: Fallo al conectarse
+  cuenta_activada: ,tu cuenta ha sido activada. ¡Gracias por participar!
+  previous: Anterior
+  next: Siguiente
+  header:
+    about: About
+  footer:
+    claim: Creado para ProBono público dentro del Desafío AbreDatos 2010
+  activerecord:
+    models: 
+      user: "el usuario"
+      matter: "el asunto"
+    attributes: 
+      matter:
+        name: "El nombre"
+        description: "La descripción"
+      user:
+        login: "El usuario"
+        email: "El correo electrónico"
+        password: "La contraseña"
+        password_confirmation: "La confirmación de la contraseña"
+    errors:
+      template:
+        header:
+          one:   "1 error impide que este {{model}} sea salvado"
+          other: "{{count}} errores impiden que este {{model}} sea salvado"
+        body:    "Tenemos problemas con los siguientes campos:"
+      messages:
+        bad_login_message: "debe tener un formato correcto"
+        bad_name_message: "debe tener un formato correcto"
+        bad_email_message: "debe tener un formato correcto"
+        invalid:       "es inválido"
+        too_long:      "demasiado largo (el máximo es {{count}} caracteres)"
+        too_short:     "demasiado corto (el mínimo es {{count}} caracteres)"
+        wrong_length:  "longitud invalida (debe tener {{count}} caracteres)"
+        taken:         "ya está ocupado"
+        inclusion:     "no está incluido en la lista"
+        exclusion:     "esta reservado"
+        confirmation:  "no coincide la confirmación"
+        accepted:      "debe ser aceptado"
+        empty:         "no puede estar vacío"
+        blank:         "no puede estar en blanco"
+        not_a_number:   "no es un numero" 
+        formats:         "debe tener un formato correcto" 
+             

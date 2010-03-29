@@ -1,0 +1,20 @@
+<h1><%= I18n.t("crear_cuenta") %></h1>
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+<p><%=I18n.t("seremos_buenos")%></p>
+<% form_for :user, :url => users_path do |f| -%>
+<p><%= label_tag 'login',  I18n.t("usuario") %>
+<%= f.text_field :login %></p>
+
+<p><%= label_tag 'email', I18n.t("email") %>
+<%= f.text_field :email %></p>
+
+<p><%= label_tag 'password', I18n.t("contraseña") %>
+<%= f.password_field :password %></p>
+
+<p><%= label_tag 'password_confirmation', I18n.t("crear_cuenta") %>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= submit_tag I18n.t("crea_cuenta") %></p>
+<% end -%>

@@ -1,0 +1,15 @@
+development: &non_production_settings
+  site_url: http://localhost:3000
+  admin_email: Bienvenida@mibuzonciudadano.org
+  site_name: MiBuzonCiudadano
+  # para 0.0.0.0:3000
+  gmkey: ABQIAAAAuunGS_VtjHf9ymsKEjhoRBQDNUKtWYO0YNsBQklWEm0Tg_LWZBSfBYDxOcbF2AcjSSGmSFLWIBW0AA
+  
+test:
+  <<: *non_production_settings
+
+  
+production:
+  site_url: http://localhost:3000
+  admin_email: hola@mibuzonciudadano.org
+  site_name: Mi Buzon Ciudadano

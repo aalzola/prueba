@@ -1,0 +1,20 @@
+
+<h1>
+  <%=h @matter.name %>
+</h1>
+
+<p>
+  <%=h @matter.description %>
+</p>
+
+<p>
+  Ayuntamiento de <%=h @matter.city %>, <%=h @matter.state %>
+</p>
+
+<%= GMap.header %>
+<%= @map.to_html %>
+<%= @map.div(:width => 600, :height => 400) %>
+
+
+<%= link_to 'Edit', edit_matter_path(@matter) %> |
+<%= link_to 'Back', matter_path %>

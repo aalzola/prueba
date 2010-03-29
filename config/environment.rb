@@ -10,7 +10,7 @@ Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
-
+  
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
@@ -19,6 +19,9 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem 'mislav-will_paginate', 
+    :lib => 'will_paginate', 
+    :source => 'http://gems.github.com'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -30,6 +33,21 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+  config.active_record.observers = :user_observer
+  
+  #Configuracion del servidor de correo
+  config.action_mailer.raise_delivery_errors = true  
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+      :address  => 'mail.ibarrekolandatarrak.org', 
+      :port  => 587, 
+      :domain  => 'ibarrekolandatarrak.org',
+      :user_name => 'admin@ibarrekolandatarrak.org', 
+      :password => 'stoleman', 
+      :authentication => :login }
+                                             
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.default_charset = 'utf-8'
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
@@ -39,3 +57,4 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+  

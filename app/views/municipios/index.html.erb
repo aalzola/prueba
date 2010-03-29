@@ -1,5 +1,7 @@
 <h1>Listing municipios</h1>
 
+<%= will_paginate @municipios %>
+
 <table>
   <tr>
     <th>Comunidad</th>
@@ -14,7 +16,7 @@
 <% @municipios.each do |municipio| %>
   <tr>
     <td><%=h municipio.comunidad %></td>
-    <td><%=h municipio.provincio %></td>
+    <td><%=h municipio.provincia %></td>
     <td><%=h municipio.municipio %></td>
     <td><%=h municipio.tipoVia %></td>
     <td><%=h municipio.direccionVia %></td>

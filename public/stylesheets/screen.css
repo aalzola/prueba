@@ -17,7 +17,10 @@ html, body
 
 div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, q, cite, a, abbr, acronym, address,
 big, small, code, samp, var, tt, pre, del, ins, strike, dfn, kbd, em, strong, font, img, s, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,caption, tbody, tfoot, thead, tr, th, td
-{	font-size: 100%;	vertical-align: baseline;}
+{
+	font-size: 100%;
+	vertical-align: baseline;
+}
 
 :link,:visited { text-decoration: none; }
 
@@ -260,7 +263,7 @@ label
 {
 	display: block;
 	line-height: 1;
-	margin: 0 0 10px 0;
+	margin: 0 0 0px 0;
 	padding: 6px 0;
 }
 

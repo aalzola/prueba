@@ -5,7 +5,7 @@
 
 <p>
   <b>Provincio:</b>
-  <%=h @municipio.provincio %>
+  <%=h @municipio.provincia %>
 </p>
 
 <p>
@@ -28,6 +28,12 @@
   <%=h @municipio.codigoPostal %>
 </p>
 
+<p> Aqui el mapa
+<%= GMap.header %>
+<%= @map.to_html %>
+<%= @map.div(:width => 600, :height => 400) %>
+
+</p>	
 <p>
   <b>Telefono:</b>
   <%=h @municipio.telefono %>

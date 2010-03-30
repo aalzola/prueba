@@ -19,6 +19,8 @@
 <%= link_to 'Edit', edit_matter_path(@matter) %> |
 <%= link_to 'Back', matter_path %>
 
+<%= render :partial => "comments/lista", :locals => { :comments => @comments }  %>
+
 <p>
 <%= link_to_remote "¡Quiero hacer un comentario!",
   :url => { :controller => "comments", :action => "new", :matter_id => @matter.id , :user_id => "1" },

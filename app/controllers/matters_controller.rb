@@ -1,10 +1,10 @@
 class MattersController < ApplicationController
   auto_complete_for :cityCouncil, :city 
-  before_filter :login_required
+  before_filter :login_required, :except => %w[ show ]
   # GET /matters
   # GET /matters.xml
   def index
-    @matters = matter.all
+    @matters = Matter.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +26,7 @@ end
     @matter = Matter.find(params[:id])
     
    @map = mapa(@matter.latitude, @matter.longitude)
+   @comments = Comment.all
     
     respond_to do |format|
       format.html # show.html.erb

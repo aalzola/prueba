@@ -1,0 +1,7 @@
+<p>Comentarios</p>
+
+<% @comments.each do |comment| %>
+  <p> Comentario por <%=h comment.name%> hace <%= h time_ago_in_words(comment.created_at)  %> </p>
+  <p> <%=h comment.comment %> </p>
+
+<% end %>

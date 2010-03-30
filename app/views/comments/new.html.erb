@@ -1,0 +1,35 @@
+<p>¿Quieres comentar?</p>
+
+<% form_for(@comment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <label for="name">Nombre:</label>
+    <% if logged_in? -%>
+		<%=h self.current_user.login %>
+	<% else %>
+		<%= f.text_field :name %>
+	<% end %>
+  </p>
+
+  <p>
+    <label for="name">Correo electrónico:</label>
+	<% if logged_in? -%>
+		<%=h  self.current_user.email %>
+	<% else %>
+		<%= f.text_field :email %>
+	<% end %>
+  </p>
+
+  <p>
+    <label for="name">Comentario:</label>
+	<%= f.text_area :comment, :cols => 100, :rows => 10 %>
+  </p>
+
+  <%= hidden_field(:comment, :matter_id)%>
+  <%= hidden_field(:comment, :user_id)%>
+
+  <p>
+    <%= f.submit 'Enviar comentario' %>
+  </p>
+<% end %>

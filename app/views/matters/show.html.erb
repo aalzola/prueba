@@ -21,7 +21,7 @@
 
 <p>
 <%= link_to_remote "¡Quiero hacer un comentario!",
-  :url => { :controller => "comments", :action => "new" },
+  :url => { :controller => "comments", :action => "new", :matter_id => @matter.id , :user_id => "1" },
   :update => { :success => "comment", :failure => "error" },
   :complete => "Effect.Fade('quiero_comentar')",
   :html => { :id => 'quiero_comentar' } %>
